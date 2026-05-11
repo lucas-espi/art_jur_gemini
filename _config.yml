@@ -1,0 +1,38 @@
+# Configuración Principal de Norvia
+title: Norvia
+email: tu-email@ejemplo.com # Cambia esto por el tuyo
+description: >-
+  Plataforma de pensamiento jurídico sobre Derecho Ambiental, 
+  Constitucional Económico e Inteligencia Artificial.
+baseurl: "" # Déjalo vacío si es el dominio principal
+url: "https://tu-usuario.github.io" # Cambia 'tu-usuario' por tu nombre de usuario de GitHub
+
+# Configuración de Contenido
+permalink: /articulos/:title/
+excerpt_separator: ""
+
+# Autores (Aquí puedes predefinir tu firma)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tu Nombre"
+      author_bio: "Abogado especializado en Derecho y Tecnología."
+
+# Plugins necesarios para el buscador y SEO
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Excluir archivos innecesarios de la compilación
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
