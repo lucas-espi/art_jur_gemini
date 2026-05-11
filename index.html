@@ -113,14 +113,34 @@
             <h2 class="text-4xl font-serif text-darkblue mb-4">¿Desea realizar una consulta?</h2>
             <p class="text-gray-600 mb-12">Si tiene alguna duda sobre los artículos publicados o requiere asesoramiento profesional, por favor complete el formulario.</p>
             
-            <form class="text-left space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Nombre completo" class="w-full p-4 border-none rounded-sm focus:ring-1 focus:ring-darkblue">
-                    <input type="email" placeholder="Correo electrónico" class="w-full p-4 border-none rounded-sm focus:ring-1 focus:ring-darkblue">
+            <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST" class="text-left space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex flex-col">
+              <label class="text-[10px] uppercase tracking-widest text-darkblue mb-1 ml-1 font-bold">Nombre</label>
+              <input type="text" name="name" required placeholder="Nombre completo" 
+                   class="w-full p-4 border-none rounded-sm bg-white focus:ring-1 focus:ring-darkblue shadow-sm">
+             </div>
+                <div class="flex flex-col">
+                <label class="text-[10px] uppercase tracking-widest text-darkblue mb-1 ml-1 font-bold">Email</label>
+                   <input type="email" name="_replyto" required placeholder="correo@ejemplo.com" 
+                      class="w-full p-4 border-none rounded-sm bg-white focus:ring-1 focus:ring-darkblue shadow-sm">
                 </div>
-                <textarea placeholder="Su mensaje..." rows="5" class="w-full p-4 border-none rounded-sm focus:ring-1 focus:ring-darkblue"></textarea>
-                <button class="bg-darkblue text-white w-full py-4 font-bold uppercase tracking-widest hover:bg-opacity-90 transition shadow-lg">Enviar consulta</button>
-            </form>
+           </div>
+    
+            <div class="flex flex-col">
+               <label class="text-[10px] uppercase tracking-widest text-darkblue mb-1 ml-1 font-bold">Consulta</label>
+                <textarea name="message" required placeholder="Escriba aquí su consulta jurídica..." rows="5" 
+                     class="w-full p-4 border-none rounded-sm bg-white focus:ring-1 focus:ring-darkblue shadow-sm"></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nueva consulta desde Norvia">
+    
+            <button type="submit" class="bg-darkblue text-white w-full py-4 font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg mt-4">
+                Enviar consulta
+            </button>
+        </form>
+
+            
       </div>
     </section>
 
